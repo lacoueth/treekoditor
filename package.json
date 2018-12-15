@@ -15,7 +15,13 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "author": "",
+  "keywords": [
+    "parser",
+    "markdown",
+    "katex",
+    "custom-elements"
+  ],
+  "author": "HugoRibiere",
   "license": "ISC",
   "files": [
     "lib/**/*"
