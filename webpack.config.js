@@ -5,12 +5,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     main: './index',
+    'main.min': './index',
   },
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.js', '.ts'],
   },
   output: {
-    filename: 'index.min.js',
+    filename: '[name].js',
     path: path.join(__dirname, 'dist'),
   },
   module: {
@@ -28,10 +29,10 @@ module.exports = {
     ],
   },
   performance: { hints: false },
-  //   mode: 'development',
-  mode: 'production',
+  mode: 'development',
+  // mode: 'production',
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist', 'lib', 'lib-esm']),
     new webpack.LoaderOptionsPlugin({
       options: {
         tslint: {

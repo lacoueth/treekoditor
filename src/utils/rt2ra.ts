@@ -1,4 +1,7 @@
-import { parse } from 'node-html-parser';
+// import { parse } from 'node-html-parser';
+// const parse = require('node-html-parser').parse;
+import * as nhp from 'node-html-parser';
+const parse = nhp.parse;
 
 /**
  * Raw text to raw AST with node-html-parser library

@@ -3,8 +3,21 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./lib",
-    "strict": true
+    "outDir": "lib",
+    "strict": true,
+    // "moduleResolution": "node",
+    // "sourceMap": true,
+    "lib": ["es2015", "dom"],
+    "moduleResolution": "node",
+    // "module": "commonjs",
+    // "target": "es5",
+    // "lib": [ "es2015", "dom" ],
+    // "outDir": "lib",
+    "allowSyntheticDefaultImports": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true
+    // "declaration": true,
   },
   "include": ["src", "index.ts"],
   "exclude": ["node_modules", "**/__tests__/*", "dist"]

@@ -10,27 +10,27 @@ showdown.setOption('strikethrough', true);
 const converter = new showdown.Converter();
 
 export function youtubeBlock(params: any) {
-  return `<youtube-video id="${params.id}"></youtube-video>`;
+  return `<trko-youtube-video video-id="${params['video-id']}"></trko-youtube-video>`;
 }
 
 export function imageBlock(params: any) {
-  return `<single-image url="${params.src}" title="${params.title}" description="${
-    params.description
-  }"></single-image>`;
+  return `<trko-image url="${params.url}" title="${params.title}" description="${params.description}"></trko-image>`;
 }
 
 export function contentBoxBlock(attrs: any, inner: string) {
-  return `<content-box classes="${attrs.class}"
-                         heading="${attrs.title}">
+  const id = 'bx-' + _.kebabCase(attrs.heading);
+
+  return `<trko-box class="${attrs.class}" id="${id}" heading="${attrs.heading}">
       ${inner}
-    </content-box>`;
+    </trko-box>`;
 }
 
 export function hideShowBlock(attrs: any, inner: string) {
-  return `<hide-show classes="${attrs.class}"
-                       heading="${attrs.title}">
+  const id = 'hs-' + _.kebabCase(attrs.heading);
+
+  return `<trko-hide-show class="${attrs.class}" id="${id}" heading="${attrs.heading}">
       ${inner}
-    </hide-show>`;
+    </trko-hide-show>`;
 }
 
 export function textBlock(text: string) {
@@ -59,5 +59,5 @@ export function annotationBlock(annotated: string, annotationContent: any) {
   const annotatedAttr = _.escape(annotated);
   const annotationAttr = _.escape(JSON.stringify(annotationContent));
 
-  return `<annotation-mark annotated="${annotatedAttr}" annotation="${annotationAttr}"></annotation-mark>`;
+  return `<trko-annotation annotated="${annotatedAttr}" annotation="${annotationAttr}"></trko-annotation>`;
 }

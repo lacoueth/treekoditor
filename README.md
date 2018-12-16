@@ -37,7 +37,7 @@ This method only uses node-html-parser library. It parses HTML tags and text blo
 ```js
 import { rt2ra } from 'treekoditor';
 
-const rawText = 'Bonjour, <annotation-mark annotated="hello">"Bonjour" in english.</annotation-mark>.';
+const rawText = 'Bonjour, <trko-annotation annotated="hello">"Bonjour" in english.</trko-annotation>.';
 const rawAST = rt2ra(rawText);
 ```
 
@@ -72,7 +72,7 @@ With the previous example input, `tiptapAST` const will look like :
             text: 'Bonjour, '
         },
         {
-            type: 'annotation-mark',
+            type: 'trko-annotation',
             attrs: {
                 annotated: 'hello'
             },
@@ -89,7 +89,7 @@ With the previous example input, `tiptapAST` const will look like :
 
 ## `ta2pa` : TipTap AST to processed AST
 
-This step in necessary before Markdown parsing as `<space>`, `\n` or `\t` are significant in this syntax. We then need to process the TipTap AST to handle a good render for inline blocks/ For example : the `annotation-mark` node have to be rendered inline to be integrated well in Markdown rendering.
+This step in necessary before Markdown parsing as `<space>`, `\n` or `\t` are significant in this syntax. We then need to process the TipTap AST to handle a good render for inline blocks/ For example : the `trko-annotation` node have to be rendered inline to be integrated well in Markdown rendering.
 
 Thus, inline blocks are serialized at this step and merged into text blocks.
 
@@ -109,7 +109,7 @@ We get :
     content: [
         {
             type: 'text',
-            text: 'Bonjour, <annotation-mark annotated="hello" annotation="\{type:\"text\",text:\"\"Bonjour\" in english.\"\}"></annotation-mark>'
+            text: 'Bonjour, <trko-annotation annotated="hello" annotation="\{type:\"text\",text:\"\"Bonjour\" in english.\"\}"></trko-annotation>'
         }
     ]
 }

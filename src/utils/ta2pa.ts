@@ -21,13 +21,13 @@ export function renderTTBlock(block: ITTNode): string {
       return renderTT(block.content!);
     case 'text':
       return textBlock(block.text!);
-    case 'youtube':
+    case 'trko-youtube-video':
       return youtubeBlock(block.attrs);
-    case 'image':
+    case 'trko-image':
       return imageBlock(block.attrs);
-    case 'box':
+    case 'trko-box':
       return contentBoxBlock(block.attrs, renderTT(preProcessTT(block.content!)));
-    case 'hideShow':
+    case 'trko-hide-show':
       return hideShowBlock(block.attrs, renderTT(preProcessTT(block.content!)));
     default:
       return '';
@@ -46,7 +46,7 @@ export function processInlineBlocks(blockList: ITTNode[]): ITTNode[] {
           text: parseMaths(block.text!),
           type: 'text',
         };
-      case 'annotation':
+      case 'trko-annotation':
         return {
           text: annotationBlock(parseMaths(block.attrs!.an), parseMaths(renderTT(block.content!))),
           type: 'text',
