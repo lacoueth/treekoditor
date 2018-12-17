@@ -48,7 +48,7 @@ export function processInlineBlocks(blockList: ITTNode[]): ITTNode[] {
         };
       case 'trko-annotation':
         return {
-          text: annotationBlock(parseMaths(block.attrs!.an), parseMaths(renderTT(block.content!))),
+          text: annotationBlock(parseMaths(block.attrs!.annotated), parseMaths(renderTT(block.content!))),
           type: 'text',
         };
       default:
