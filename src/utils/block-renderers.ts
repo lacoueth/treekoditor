@@ -10,7 +10,7 @@ showdown.setOption('strikethrough', true);
 const converter = new showdown.Converter();
 
 export function youtubeBlock(params: any) {
-  return `<trko-youtube-video video-id="${params['video-id']}"></trko-youtube-video>`;
+  return `<trko-youtube-video description="${params.description}" video-id="${params['video-id']}"></trko-youtube-video>`;
 }
 
 export function imageBlock(params: any) {
