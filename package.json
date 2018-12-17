@@ -2,10 +2,10 @@
   "name": "treekoditor",
   "version": "1.0.3",
   "description": "",
-  "main": "lib/index.js",
+  "main": "dist/lib/index.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "webpack && tsc && tsc -m es6 --outDir lib-esm",
+    "build": "webpack && tsc && tsc -m es6 --outDir dist/lib-esm",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
@@ -23,9 +23,7 @@
   "author": "HugoRibiere",
   "license": "ISC",
   "files": [
-    "dist",
-    "lib",
-    "lib-esm"
+    "dist"
   ],
   "dependencies": {
     "katex": "^0.10.0",

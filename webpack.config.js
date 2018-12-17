@@ -32,7 +32,7 @@ module.exports = {
   mode: 'development',
   // mode: 'production',
   plugins: [
-    new CleanWebpackPlugin(['dist', 'lib', 'lib-esm']),
+    new CleanWebpackPlugin(['dist']),
     new webpack.LoaderOptionsPlugin({
       options: {
         tslint: {
