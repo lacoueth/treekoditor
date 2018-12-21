@@ -27,6 +27,18 @@ export function contentBoxBlock(attrs: any, inner: string) {
     </trko-box>`;
 }
 
+export function blockquoteBlock(attrs: any, inner: string) {
+  // const id = 'bq-' + _.kebabCase(attrs.heading);
+
+  return `<trko-blockquote
+  class="${attrs.class}" 
+  link="${attrs.link}"
+  alignment="${attrs.alignment}"
+  author="${attrs.author}">
+      ${inner}
+    </trko-blockquote>`;
+}
+
 export function hideShowBlock(attrs: any, inner: string) {
   const id = 'hs-' + _.kebabCase(attrs.heading);
 

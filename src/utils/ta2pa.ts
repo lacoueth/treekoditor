@@ -3,6 +3,7 @@ import { ITTNode } from '../../models/ttAST.model';
 // import { toTipTapAst } from './step3_actions/embed-tiptap';
 import {
   annotationBlock,
+  blockquoteBlock,
   contentBoxBlock,
   hideShowBlock,
   imageBlock,
@@ -27,6 +28,8 @@ export function renderTTBlock(block: ITTNode): string {
       return imageBlock(block.attrs);
     case 'trko-box':
       return contentBoxBlock(block.attrs, renderTT(preProcessTT(block.content!)));
+    case 'trko-blockquote':
+      return blockquoteBlock(block.attrs, renderTT(preProcessTT(block.content!)));
     case 'trko-hide-show':
       return hideShowBlock(block.attrs, renderTT(preProcessTT(block.content!)));
     default:
