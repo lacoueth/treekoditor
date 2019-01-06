@@ -42,7 +42,7 @@ export function blockquoteBlock(attrs: any, inner: string) {
 export function hideShowBlock(attrs: any, inner: string) {
   const id = 'hs-' + _.kebabCase(attrs.heading);
 
-  return `<trko-hide-show class="${attrs.class}" id="${id}" heading="${attrs.heading}" hidden="${attrs.close}">
+  return `<trko-hide-show class="${attrs.class}" id="${id}" heading="${attrs.heading}" close="${attrs.close}">
       ${inner}
     </trko-hide-show>`;
 }
