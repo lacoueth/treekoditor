@@ -65,7 +65,7 @@ export function parseMaths(input: string) {
     } as any);
   });
 
-  display = _.replace(display, /\$([^\$\<\>"])\$/g, (e: string) => {
+  display = _.replace(display, /\$[^\$\<\>"]\$/g, (e: string) => {
     return katex.renderToString(_.trim(e, '$'), { throwOnError: false } as any);
   });
 
