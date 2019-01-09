@@ -58,12 +58,17 @@ export function textBlock(text: string) {
 }
 
 export function parseMaths(input: string) {
-  const display = _.replace(input, /\$\$([^\$\<\>"])+\$\$/g, (e: string) => {
+  let display = _.replace(input, /\$\$([^\$\<\>"])+\$\$/g, (e: string) => {
     return katex.renderToString(_.trim(e, '$'), {
       displayMode: true,
       throwOnError: false,
     } as any);
   });
+  
+  display = _.replace(display, /\$([^\$\<\>"])\$/g, (e: string) => {
+    return katex.renderToString(_.trim(e, '$'), { throwOnError: false } as any);
+  });
+
   return _.replace(display, /\$\S([^\$\<\>"])*\S\$/g, (e: string) => {
     return katex.renderToString(_.trim(e, '$'), { throwOnError: false } as any);
   });
