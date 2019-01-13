@@ -10,6 +10,7 @@ import {
   parseMaths,
   textBlock,
   youtubeBlock,
+  ytLightBlock,
 } from './block-renderers';
 
 export function preProcessTT(blockList: ITTNode[]): ITTNode[] {
@@ -24,6 +25,8 @@ export function renderTTBlock(block: ITTNode): string {
       return textBlock(block.text!);
     case 'trko-youtube-video':
       return youtubeBlock(block.attrs);
+    case 'trko-yt-light':
+      return ytLightBlock(block.attrs);
     case 'trko-image':
       return imageBlock(block.attrs);
     case 'trko-box':

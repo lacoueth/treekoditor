@@ -15,6 +15,10 @@ export function youtubeBlock(params: any) {
   }"></trko-youtube-video>`;
 }
 
+export function ytLightBlock(params: any) {
+  return `<trko-yt-light video-id="${params['video-id']}"></trko-yt-light>`;
+}
+
 export function imageBlock(params: any) {
   return `<trko-image url="${params.url}" title="${params.title}" description="${params.description}"></trko-image>`;
 }
