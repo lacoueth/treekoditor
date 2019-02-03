@@ -28,7 +28,7 @@ export function renderTTBlock(block: ITTNode): string {
     case 'trko-yt-light':
       return ytLightBlock(block.attrs);
     case 'trko-image':
-      return imageBlock(block.attrs);
+      return imageBlock(block.attrs, renderTT(preProcessTT(block.content!)));
     case 'trko-box':
       return contentBoxBlock(block.attrs, renderTT(preProcessTT(block.content!)));
     case 'trko-blockquote':

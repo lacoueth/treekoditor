@@ -19,8 +19,10 @@ export function ytLightBlock(params: any) {
   return `<trko-yt-light video-id="${params['video-id']}"></trko-yt-light>`;
 }
 
-export function imageBlock(params: any) {
-  return `<trko-image url="${params.url}" title="${params.title}" description="${params.description}"></trko-image>`;
+export function imageBlock(params: any, inner: string) {
+  return `<trko-image url="${params.url}" title="${params.title}" class="${params.class}" description="${
+    params.description
+  }">${inner}</trko-image>`;
 }
 
 export function contentBoxBlock(attrs: any, inner: string) {
