@@ -35,6 +35,8 @@ export function renderTTBlock(block: ITTNode): string {
       return blockquoteBlock(block.attrs, renderTT(preProcessTT(block.content!)));
     case 'trko-hide-show':
       return hideShowBlock(block.attrs, renderTT(preProcessTT(block.content!)));
+    case 'code':
+      return `<pre><code>${_.escape(block.text!)}</code></pre>`;
     default:
       return '';
   }

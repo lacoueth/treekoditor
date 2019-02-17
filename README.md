@@ -32,7 +32,7 @@ The idea is then to build intermediate tree representation allowing to handle ev
 
 ## `rt2ra` : Raw text to raw AST (HTML AST)
 
-This method only uses node-html-parser library. It parses HTML tags and text blocks that will be parsed later as Markdown.
+This method only uses [node-html-parser](https://www.npmjs.com/package/node-html-parser) library. It parses HTML tags and text blocks that will be parsed later as Markdown.
 
 ```js
 import { rt2ra } from 'treekoditor';
